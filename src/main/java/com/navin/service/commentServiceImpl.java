@@ -15,7 +15,6 @@ import com.navin.repo.commentRepository;
 public class commentServiceImpl implements commentService {
 
 	@Autowired
-//	@Qualifier("commentRepository")
 	private commentRepository commentRepository;
 
 	@Override
@@ -49,7 +48,7 @@ public class commentServiceImpl implements commentService {
 		List<Comment> allComments = commentRepository.findAll();
 		return allComments;
 		}catch(Exception e) {
-			throw new commentNotFoundException(serviceCommentMessages.GETAll_COMMENT + e );
+			throw new commentNotFoundException(serviceCommentMessages.GETAll_COMMENT);
 		}
 	}
 
